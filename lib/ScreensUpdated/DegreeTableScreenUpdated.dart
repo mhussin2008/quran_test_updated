@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import '';
 import '../Data/DegreeData.dart';
 
-class DegreeTable extends StatefulWidget {
-   DegreeTable({Key? key}) : super(key: key);
+class DegreeTableScreenUpdated extends StatefulWidget {
+  DegreeTableScreenUpdated({Key? key}) : super(key: key);
 
   @override
-  State<DegreeTable> createState() => _DegreeTableState();
+  State<DegreeTableScreenUpdated> createState() => _DegreeTableScreenUpdatedState();
 }
 
-class _DegreeTableState extends State<DegreeTable> {
+class _DegreeTableScreenUpdatedState extends State<DegreeTableScreenUpdated> {
 
 
 
@@ -20,17 +20,17 @@ class _DegreeTableState extends State<DegreeTable> {
     // TODO: implement initState
     super.initState();
     //DegreeData.getDegreeData().then((value) => print('done'));
-    
+
 
   }
-  
+
   @override
   Widget build(BuildContext context) {
     List<TextEditingController> tEditContoller=[];
     tEditContoller.clear();
     tEditContoller=
-         List.generate(DegreeData.degreeTable.length, (index) => TextEditingController(text: DegreeData.degreeTable[index].toString() ));
-      print(DegreeData.degreeTable.length.toString());
+        List.generate(DegreeData.degreeTable.length, (index) => TextEditingController(text: DegreeData.degreeTable[index].toString() ));
+    print(DegreeData.degreeTable.length.toString());
     print('im here');
     print(tEditContoller[0].text);
 
@@ -48,21 +48,21 @@ class _DegreeTableState extends State<DegreeTable> {
                   children:
                   tEditContoller.asMap().entries.map  (
                           (entry) =>  Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Expanded(
-                                  child: TextField(
-                                      controller: tEditContoller[entry.key]  ,
-                                       ),
-                                )
-                                ,SizedBox(width: 20,)
-                                ,
-                                Expanded(child: Text(DegreeData.faultList[entry.key]))
-                              ],
-                            ),
-                          )).toList()
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Expanded(
+                              child: TextField(
+                                controller: tEditContoller[entry.key]  ,
+                              ),
+                            )
+                            ,SizedBox(width: 20,)
+                            ,
+                            Expanded(child: Text(DegreeData.faultList[entry.key]))
+                          ],
+                        ),
+                      )).toList()
               ),
               SizedBox(height: 40,),
               OutlinedButton(onPressed: () async {
@@ -81,25 +81,11 @@ class _DegreeTableState extends State<DegreeTable> {
                   // deleayed code here
 
                 });
-                
-              }, child: Text('حفظ ورجوع للشاشة الرئيسية'))
-            ,
 
-              // OutlinedButton(onPressed: () async {
-              //   // DegreeData.degreeTable=DegreeData.degreeTable.asMap().entries.map((entry) {
-              //   //   return int.parse(tEditContoller[entry.key].text);
-              //   // }).toList();
-              //   DegreeData.degreeTable.clear();
-              //
-              //   //print(DegreeData.degreeTable);
-              //   await DegreeData.getDegreeData();
-              //   print(DegreeData.degreeTable);
-              //   print(DegreeData.degreeTableS);
-              //   setState(() {
-              //
-              //   });
-              //
-              // }, child: Text('read data'))
+              }, child: Text('حفظ ورجوع للشاشة الرئيسية'))
+              ,
+
+
             ],
           ),
         ),

@@ -2,14 +2,15 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:quran_test_updated/Screens/ChallengeEntryScreen.dart';
+import 'package:quran_test_updated/ScreensUpdated/ExamEntryScreenUpdated.dart';
 
 import 'package:sqflite/sqflite.dart';
 
-import '../Screens/DegreeTableScreen.dart';
+import '../ScreensUpdated/DegreeTableScreenUpdated.dart';
 import '../Screens/DialogScreen.dart';
 
 
-//import 'DegreeTableScreen.dart';
+
 //import 'DialogScreen.dart';
 
 class startUpScreen extends StatelessWidget {
@@ -55,7 +56,7 @@ class startUpScreen extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (BuildContext context) => challengeEntryScreen()));
+                            builder: (BuildContext context) => ExamEntryScreenUpdated()));
                   },
                   child: Text('جدول المسابقات',style: TextStyle(fontSize: 24)))
               ,
@@ -65,7 +66,7 @@ class startUpScreen extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (BuildContext context) => DegreeTable()));
+                            builder: (BuildContext context) => DegreeTableScreenUpdated()));
                   },
                   child: Text('تعديل جدول خصم الدرجات',style: TextStyle(fontSize: 24)))
               // OutlinedButton(

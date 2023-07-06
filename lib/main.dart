@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quran_test_updated/Data/DegreeData.dart';
 
-import 'ScreensUpdated/StartUpScreen.dart';
+import 'ScreensUpdated/StartUpScreenUpdated.dart';
 
 Future<void> main() async {
   //
